@@ -1,5 +1,7 @@
 
-int paletteSize = 30;
+int paintingNumber = 0; // For saving your paintings!
+
+int paletteSize = 30; //
 color col1 = color(255, 204, 0);
 color col2 = color(50, 55, 100);
 color col3 = color(20, 100, 45);
@@ -59,5 +61,13 @@ void draw() {
         ellipse(mouseX + sprayRadius*cos(dropAngle), mouseY + sprayRadius*sin(dropAngle), dropletSize, dropletSize);
       }
     }
+  }
+}
+
+void keyPressed(){
+  if(key == 's'){
+    String s = "paint" + nf(paintingNumber,3) +".jpg";
+    save(s);
+    paintingNumber++;
   }
 }
